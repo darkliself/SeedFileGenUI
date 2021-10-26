@@ -1,0 +1,12 @@
+--add-modules
+"java.base"
+--add-modules
+"java.desktop"
+--add-modules
+"java.logging"
+--strip-debug
+--no-header-files
+--no-man-pages
+--strip-native-commands
+--output
+"C:\\Users\\alekoz\\Desktop\\GitClone\\JetpackComposeTest\\build\\compose\\tmp\\main\\runtime"
