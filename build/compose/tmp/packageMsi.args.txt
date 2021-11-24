@@ -5,7 +5,7 @@
 --resource-dir
 "C:\\Users\\alekoz\\Desktop\\GitClone\\JetpackComposeTest\\build\\compose\\tmp\\resources"
 --main-jar
-"C:\\Users\\alekoz\\Desktop\\GitClone\\JetpackComposeTest\\build\\compose\\tmp\\packageMsi\\libs\\JetpackComposeTest-1.0-b260f7b0d1d7c4f97da1788f77e6db.jar"
+"C:\\Users\\alekoz\\Desktop\\GitClone\\JetpackComposeTest\\build\\compose\\tmp\\packageMsi\\libs\\JetpackComposeTest-1.0-35229640d639ab11a028b071e895c974.jar"
 --main-class
 "MainKt"
 --icon

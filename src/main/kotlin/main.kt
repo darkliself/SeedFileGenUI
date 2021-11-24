@@ -27,6 +27,7 @@ fun main() = Window(
 
 @Composable
 fun mainComposable() {
+    println("jdshfjhds")
     var commonBtnText by remember { mutableStateOf("open") }
     var dumpBtnText by remember { mutableStateOf("open") }
     var commonFilePass by remember { mutableStateOf("") }
