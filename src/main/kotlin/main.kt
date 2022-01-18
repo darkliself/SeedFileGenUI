@@ -27,18 +27,16 @@ fun main() = Window(
 
 @Composable
 fun mainComposable() {
-    println("jdshfjhds")
     var commonBtnText by remember { mutableStateOf("open") }
     var dumpBtnText by remember { mutableStateOf("open") }
     var commonFilePass by remember { mutableStateOf("") }
     var staplesDumpPass by remember { mutableStateOf("") }
     var textFieldValue by remember { mutableStateOf("") }
-    val darkColors = darkColors(
-        primary = Color.LightGray,
-        background = Color.Gray
-    )
     MaterialTheme(
-        colors = darkColors,
+        colors = darkColors(
+            primary = Color.LightGray,
+            background = Color.Gray
+        )
     ) {
         Column(
             modifier = Modifier.size(width = 400.dp, height = 1000.dp)
