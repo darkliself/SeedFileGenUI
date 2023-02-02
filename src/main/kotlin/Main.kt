@@ -1,4 +1,3 @@
-import androidx.compose.desktop.Window
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
@@ -10,20 +9,33 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.IntSize
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.*
+import androidx.compose.ui.window.Window
+import androidx.compose.ui.window.WindowState
+import androidx.compose.ui.window.application
 import javax.swing.JFileChooser
 import javax.swing.filechooser.FileSystemView
 import java.io.File
 
-fun main() = Window(
-    title = "Seed file generator",
-    size = IntSize(440, 290),
-    resizable = false,
-
-) {
-    mainComposable()
+@Composable
+fun app() {
+    MaterialTheme {
+        mainComposable()
+    }
 }
+
+
+fun main() = application {
+    Window(
+        onCloseRequest = ::exitApplication,
+        state = WindowState(size = DpSize(450.dp, 350.dp)),
+        resizable = false,
+        title = "New categories seed file generator"
+    ) {
+        app()
+    }
+}
+
 
 @Composable
 fun mainComposable() {
@@ -52,7 +64,8 @@ fun mainComposable() {
             }
             Row {
                 TextField(
-                    modifier = Modifier.verticalScroll(rememberScrollState()).size(280.dp, 100.dp).padding(start = 20.dp, top = 10.dp),
+                    modifier = Modifier.verticalScroll(rememberScrollState()).size(280.dp, 100.dp)
+                        .padding(start = 20.dp, top = 10.dp),
                     maxLines = 3,
                     value = textFieldValue,
                     onValueChange = { textFieldValue = it },
@@ -67,9 +80,9 @@ fun mainComposable() {
                     onClick = {
                         SeedFileGenerator(commonFilePass, staplesDumpPass, textFieldValue).generateSeedRequestFile()
                     },
-                    shape = RoundedCornerShape(50)
+                    shape = RoundedCornerShape(50),
                 ) {
-                    Text("Generate")
+                    Text("Generate", fontSize = 12.sp)
                 }
             }
         }
